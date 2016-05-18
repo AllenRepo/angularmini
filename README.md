@@ -1,0 +1,2 @@
+# angularmini
+> Scaffolded angular project
