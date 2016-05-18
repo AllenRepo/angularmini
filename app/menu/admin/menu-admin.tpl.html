@@ -1,0 +1,26 @@
+
+<div>
+    <form name="miniMenuAdminForm" novalidate ng-submit="vm.onSubmit(miniMenuAdminForm)">
+        <div>
+            <label>Name</label>
+            <input type="text" ng-model="vm.name">
+        </div>
+        <div>
+            <label>Price</label>
+            <input type="text" ng-model="vm.price">
+        </div>
+        <button type="submit">Create</button>
+    </form>
+</div>
+
+
+<!-- Display -->
+<div>
+    <ul>
+        <li ng-repeat="item in vm.data">
+            <span>{{item.id}}</span>
+            <span>{{item.name}}</span>
+            <span>{{item.price}}</span>
+        </li>
+    </ul>
+</div>
