@@ -1,0 +1,15 @@
+
+<div>
+    <form name="miniMenuAdminForm" novalidate ng-submit="vm.onSubmit(miniMenuAdminForm)">
+        <div>
+            <label>Name</label>
+            <input type="text" ng-model="vm.name" required ng-maxlength="30">
+        </div>
+        <div>
+            <label>Price</label>
+            <input type="text" ng-model="vm.price" ng-pattern="/^[\d\.]{1,5}$/">
+        </div>
+        <button type="submit">{{vm.mode}}</button>
+    </form>
+</div>
+<mini-menu-display mini-data="vm.data" mini-on-edit="vm.onEdit"></mini-menu-display>

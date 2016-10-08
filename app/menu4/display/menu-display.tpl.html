@@ -1,0 +1,18 @@
+<!-- Display -->
+<div>
+    <ul>
+        <button type="submit" ng-click="vm.orderBy = 'id'; vm.direction = !vm.direction">Sort by id</button>
+        <button type="submit" ng-click="vm.orderBy = 'name'; vm.direction = !vm.direction">Sort by name</button>
+        <button type="submit" ng-click="vm.orderBy = 'price'; vm.direction = !vm.direction">Sort by price</button>
+        Filter : <input type="text" ng-model="vm.filter"/> 
+        <li ng-repeat="item in vm.miniData | orderBy: vm.orderBy : vm.direction | filter: vm.filter">
+            <span>{{item.id}}</span>
+            <span>{{item.name}}</span>
+            <span ng-if="item.price < 5">{{item.price}}</span><span ng-show="item.price >= 5">Pricy!</span>
+            <span ng-switch="item.price">
+                <span ng-switch-when="2.99">on sale!</span>
+                <span ng-switch-default>regular price</span>
+            </span>
+        </li>
+    </ul>
+</div>
